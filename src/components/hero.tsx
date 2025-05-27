@@ -107,7 +107,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.15 }}
         >
           브랜드 정체성과 핵심 가치를 고려하지 않은 인터페이스는{" "}
-          <span className="font-semibold">'껍데기'</span>입니다.{" "}
+          <span className="font-semibold">&apos;껍데기&apos;</span>입니다.{" "}
           <br className="hidden md:block" />
           좋은 UX/UI는 제품의 핵심 가치를 사용자가 자연스레 체감하게 만듭니다.{" "}
           <br />

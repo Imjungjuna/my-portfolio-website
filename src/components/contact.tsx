@@ -57,8 +57,8 @@ export default function Contact() {
             Get in Touch
           </h2>
           <p className="mb-8 text-gray-400">
-            Interested in collaborating or commissioning a piece? Let's create
-            something amazing together.
+            Interested in collaborating or commissioning a piece? Let&apos;s
+            create something amazing together.
           </p>
         </motion.div>
         <motion.div
@@ -75,9 +75,9 @@ export default function Contact() {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>이름</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your name" {...field} />
+                      <Input placeholder="홍길동" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -88,7 +88,7 @@ export default function Contact() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>메일 주소</FormLabel>
                     <FormControl>
                       <Input placeholder="your@email.com" {...field} />
                     </FormControl>
@@ -101,10 +101,10 @@ export default function Contact() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel>프로젝트 제안</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Tell me about your project..."
+                        placeholder="프로젝트에 대해 이야기해주세요..."
                         className="min-h-[120px]"
                         {...field}
                       />
