@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Twitter, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Portfolio() {
@@ -13,7 +13,7 @@ export default function Portfolio() {
           {/* Profile Header */}
           <div className="flex items-center gap-4">
             <Image
-              src="/placeholder.svg"
+              src="@/public/placeholder.svg"
               alt="Profile"
               width={60}
               height={60}
