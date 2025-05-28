@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { skills } from "@/lib/skills";
 import { competencies } from "@/lib/competency";
@@ -126,43 +126,53 @@ export default function Portfolio() {
           </p>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
             {projects.map((project) => (
-              <div
+              <Link
                 key={project.id}
-                className="hover:cursor-pointer w-full h-fit bg-background border-none rounded-md md:rounded-lg flex flex-col justify-between gap-6 md:gap-0 overflow-hidden hover:scale-[1.05] duration-200"
+                href={`/project/${project.id}`}
+                scroll={false}
               >
-                <div className="w-full aspect-4/3 bg-amber-300 relative">
-                  <Image src={project.image} alt={project.title} fill={true} />
-                </div>
-                <div className="p-5 md:p-6 ">
-                  <h3 className="text-lg md:text-xl text-black font-semibold md:mb-4 no-underline!important">
-                    {project.title}
-                  </h3>
-                  <div className="text-black/60 mb text-sm font-normal mb-4">
-                    {project.description.split(",").map((line, index) => (
-                      <p
-                        className="truncate whitespace-nowrap overflow-hidden"
-                        key={index}
-                      >
-                        {line.trim()}
-                      </p>
-                    ))}
+                <div
+                  key={project.id}
+                  className="hover:cursor-pointer w-full h-fit bg-background border-none rounded-md md:rounded-lg flex flex-col justify-between gap-6 md:gap-0 overflow-hidden hover:scale-[1.05] duration-200"
+                >
+                  <div className="w-full aspect-4/3 bg-amber-300 relative">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill={true}
+                    />
                   </div>
+                  <div className="p-5 md:p-6 ">
+                    <h3 className="text-lg md:text-xl text-black font-semibold md:mb-4 no-underline!important">
+                      {project.title}
+                    </h3>
+                    <div className="text-black/60 mb text-sm font-normal mb-4">
+                      {project.description.split(",").map((line, index) => (
+                        <p
+                          className="truncate whitespace-nowrap overflow-hidden"
+                          key={index}
+                        >
+                          {line.trim()}
+                        </p>
+                      ))}
+                    </div>
 
-                  <div className="text-black flex gap-2 items-center">
-                    {project.stacks.map((stackName) => {
-                      const iconSrc = stackIcons[stackName];
-                      return (
-                        <Image
-                          key={stackName}
-                          src={iconSrc}
-                          alt={stackName}
-                          className="size-6 rounded-xs"
-                        />
-                      );
-                    })}
+                    <div className="text-black flex gap-2 items-center">
+                      {project.stacks.map((stackName) => {
+                        const iconSrc = stackIcons[stackName];
+                        return (
+                          <Image
+                            key={stackName}
+                            src={iconSrc}
+                            alt={stackName}
+                            className="size-6 rounded-xs"
+                          />
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

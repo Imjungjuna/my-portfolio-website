@@ -62,7 +62,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "성균관대학교 축제 웹사이트",
+    title: "성균관대학교 축제 사이트",
     date: "2025.05 ~",
     description:
       "축제 정보 일원화를 위한 웹사이트 제작., 모바일용 ux 최적화와 seo 향상",
