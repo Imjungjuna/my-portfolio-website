@@ -9,8 +9,8 @@ export default async function ProjectPage({
 }: {
   params: { id: string };
 }) {
-  const paramInString = await params.id;
-  const projectId = parseInt(paramInString, 10);
+  const paramInString = await params;
+  const projectId = parseInt(paramInString.id, 10);
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {

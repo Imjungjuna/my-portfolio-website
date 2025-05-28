@@ -29,7 +29,7 @@ export default async function ProjectModal({
 
   return (
     <Modal>
-      <div className="p-8 bg-white rounded-lg max-w-4xl w-full mx-auto">
+      <div className="p-8 bg-white rounded-lg size-full">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">
           {project.title}
         </h2>
