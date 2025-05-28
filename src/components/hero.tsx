@@ -87,30 +87,32 @@ export default function Hero() {
     <div className="relative h-screen w-full overflow-hidden">
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 h-full w-full bg-black"
+        className="absolute inset-0 h-full w-full bg-black/80"
       />
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         <motion.h1
-          className="mb-6 md:mb-8 text-4xl font-semibold tracking-tighter sm:text-7xl lg:text-6xl leading-[1.2]"
+          className="mb-8 text-4xl sm:text-5xl font-bold tracking-tighter md:text-7xl lg:text-6xl leading-[1.2]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           안녕하세요, <br />
           프론트엔드 개발자
-          <br /> 임정준입니다.
+          <br /> <span className="text-purple-500">임정준</span>입니다.
         </motion.h1>
         <motion.p
-          className="max-w-[600px] text-sm text-gray-400 sm:text-lg break-keep mb-4 md:mb-6"
+          className="max-w-[600px] text-sm text-gray-300 sm:text-lg break-keep mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
         >
           브랜드 정체성과 핵심 가치를 고려하지 않은 인터페이스는{" "}
           <span className="font-semibold">&apos;껍데기&apos;</span>입니다.{" "}
-          <br className="hidden md:block" />
-          좋은 UX/UI는 제품의 핵심 가치를 사용자가 자연스레 체감하게 만듭니다.{" "}
-          <br />
+          <br className="hidden sm:block" />
+          좋은 UX/UI는 제품의 핵심 가치를 <br className="sm:hidden" />
+          사용자가 자연스레 체감하게 만
+          <span className="sm:hidden">드는 것이어야 합니다.</span>
+          <span className="hidden sm:inline">듭니다.</span> <br />
           React/Next.js를 사용하여 웹을 개발하고 있습니다.
         </motion.p>
         <motion.div
@@ -119,7 +121,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <Button className="cursor-pointer font-normal text-white/85 hover:text-white-95 text-sm md:text-base tracking-tight py-2 px-7">
+          <Button className="cursor-pointer font-normal bg-gray-700 text-white/90 hover:text-white-95 text-sm md:text-base tracking-tight py-2 px-7">
             <span className="flex items-center gap-2">
               이력서 다운로드 <Download color="white" />
             </span>

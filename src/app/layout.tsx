@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Gothic_A1 } from "next/font/google";
 import "./globals.css";
 import type React from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const gothicA1 = Gothic_A1({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "Frontend Developer Portfolio",
@@ -17,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${gothicA1.className} antialiased`}>{children}</body>
     </html>
   );
 }

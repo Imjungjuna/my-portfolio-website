@@ -1,14 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Twitter, Linkedin, Youtube } from "lucide-react";
+// import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { skills } from "@/lib/skills";
+import { competencies } from "@/lib/competency";
+import { projects } from "@/lib/projects";
+import { stackIcons } from "@/lib/stackIcons";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-black text-white p-6">
-      <div className="flex-col gap-8 max-w-[1290px] mx-auto">
+    <div className="min-h-screen bg-black/80 text-white p-4 md:p-8 lg:p-12">
+      <div className="flex-col max-w-[1340px] mx-auto">
+        {/* Profile Section */}
         <div className="space-y-8 hidden">
           {/* Profile Header */}
           <div className="flex items-center gap-4">
@@ -36,73 +40,137 @@ export default function Portfolio() {
               나에 관해서
             </Button>
           </div>
+        </div>
 
-          {/* Social Links */}
-          <div className="space-y-4">
-            <div className="flex gap-4">
-              <Button variant="ghost" size="icon" asChild>
-                <Link href="#">
-                  <Twitter className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <Link href="#">
-                  <Linkedin className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <Link href="#">
-                  <Youtube className="w-5 h-5" />
-                </Link>
-              </Button>
-            </div>
+        {/* Stack Section */}
+        <div className="bg-white rounded-xl justify-center w-full py-8 mt-8 mb-16 md:mt-12 md:mb-24 lg:mb-32">
+          <h2 className="text-yellow-500 text-sm md:text-base w-max mx-auto tracking-tight mb-[6px] leading-[1.5] font-semibold">
+            기술 스택 및 도구
+          </h2>
+          <p className="text-2xl text-center text-gray-700 break-keep mb-6 sm:mb-10 leading-[1.4] tracking-tight font-semibold max-w-max mx-auto">
+            아래<span className="hidden sm:inline">의</span> 기술을 사용할 수
+            있습니다.
+          </p>
+          <div className="mx-auto flex flex-wrap gap-3 md:gap-4 max-w-96 md:max-w-screen justify-center">
+            {skills.map((skill) => (
+              <div
+                key={skill.id}
+                className="relative group flex justify-center hover:shadow-md rounded-md hover:scale-[1.05] duration-200"
+              >
+                <Image
+                  src={skill.Icon}
+                  alt={`${skill.name} 아이콘`}
+                  width={48}
+                  height={48}
+                  className="size-12"
+                />
+                <div
+                  className="absolute bottom-full mb-2 px-3 py-1.5 text-sm 
+                         bg-gray-800 text-white rounded-md shadow-lg
+                         invisible opacity-0 group-hover:visible group-hover:opacity-100 
+                         transition-all duration-300 whitespace-nowrap"
+                >
+                  {skill.name}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-4 border-transparent border-t-gray-800"></div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="space-y-8">
-          {/* Stack Section */}
-          <section className="bg-blue-600 rounded-xl p-6">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-mono">My Stack</h2>
-              <Button variant="ghost" size="icon" className="text-white">
-                <span className="sr-only">View all tools</span>→
-              </Button>
-            </div>
-            <div className="flex gap-4">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="w-12 h-12 bg-white rounded-xl" />
-              ))}
-            </div>
-          </section>
-          {/* Projects Section */}
-          <section>
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-mono">My Projects</h2>
-              <Button variant="ghost" size="icon">
-                <span className="sr-only">View all projects</span>→
-              </Button>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="relative aspect-square bg-gray-900 rounded-lg overflow-hidden"
-                >
-                  <Image
-                    src="/placeholder.svg"
-                    alt={`Project ${i}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
+        {/* Competency Section */}
+        <div className="max-w-full mx-auto pt-16 pb-24 md:pt-20 md:pb-32 lg:pb-40">
+          <h2 className="text-yellow-500 text-sm md:text-base w-max mx-auto tracking-tight mb-[6px] leading-[1.5] font-semibold">
+            핵심 역량
+          </h2>
+          <p className="text-2xl text-center text-gray-700 break-keep mb-6 sm:mb-10 leading-[1.4] tracking-tight font-semibold max-w-max mx-auto">
+            <span className="hidden md:inline">
+              사용자 중심의 철학을 바탕으로,
+            </span>
+            견고한 기술력 위에 직관적인 경험을 담아냅니다.
+          </p>
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6">
+            {competencies.map((competencies) => (
+              <div
+                key={competencies.id}
+                className="bg-white border-4 border-amber-300 text-black pt-2 pb-8 rounded-md flex-grow-1"
+              >
+                <h3 className="text-xl font-bold text-red-300 mb-4 p-4 my-2 text-center">
+                  {competencies.title}
+                </h3>
+                <ul className="space-y-3 text-sm text-gray-700">
+                  {competencies.details.map((detail, index) => (
+                    <li
+                      className="mb-2 list-disc pl-1 ml-8 pr-4 lg:text-base md:text-sm text-base text-stone-700"
+                      key={index}
+                    >
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
 
-          {/* Contact and Clients Sections */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Contact Section */}
-            <section className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 p-6">
+        {/* Projects Section */}
+        <section className="max-w-full mx-auto pt-16 pb-24 md:pt-20 md:pb-32 lg:pb-40">
+          <h2 className="text-yellow-500 text-sm md:text-base w-max mx-auto tracking-tight mb-[6px] leading-[1.5] font-semibold">
+            주요 프로젝트
+          </h2>
+          <p className="text-2xl text-center text-gray-200 break-keep mb-8 sm:mb-12 leading-[1.4] tracking-tight font-semibold max-w-max mx-auto">
+            <span className="hidden md:inline">
+              기술적 고민과 해결 과정을 담은,
+            </span>
+            주요 프로젝트와 세부 사항을 살펴보세요.
+          </p>
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="hover:cursor-pointer w-full h-fit bg-background border-none rounded-md md:rounded-lg flex flex-col justify-between gap-6 md:gap-0 overflow-hidden hover:scale-[1.05] duration-200"
+              >
+                <div className="w-full aspect-4/3 bg-amber-300 relative">
+                  <Image src={project.image} alt={project.title} fill={true} />
+                </div>
+                <div className="p-5 md:p-6 ">
+                  <h3 className="text-lg md:text-xl text-black font-semibold md:mb-4 no-underline!important">
+                    {project.title}
+                  </h3>
+                  <div className="text-black/60 mb text-sm font-normal mb-4">
+                    {project.description.split(",").map((line, index) => (
+                      <p
+                        className="truncate whitespace-nowrap overflow-hidden"
+                        key={index}
+                      >
+                        {line.trim()}
+                      </p>
+                    ))}
+                  </div>
+
+                  <div className="text-black flex gap-2 items-center">
+                    {project.stacks.map((stackName) => {
+                      const iconSrc = stackIcons[stackName];
+                      return (
+                        <Image
+                          key={stackName}
+                          src={iconSrc}
+                          alt={stackName}
+                          className="size-6 rounded-xs"
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact and Clients Sections */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Contact Section */}
+          {/* <section className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 p-6">
               <h2 className="text-2xl font-mono mb-4">Contact</h2>
               <Button
                 variant="ghost"
@@ -111,9 +179,9 @@ export default function Portfolio() {
               >
                 <span className="sr-only">Contact me</span>→
               </Button>
-            </section>
+            </section> */}
 
-            {/* Happy Clients Section */}
+          {/* Happy Clients Section
             <section className="bg-gray-900 rounded-xl p-6">
               <div className="flex items-center gap-2 mb-2">
                 {[...Array(5)].map((_, i) => (
@@ -140,8 +208,7 @@ export default function Portfolio() {
                   />
                 ))}
               </div>
-            </section>
-          </div>
+            </section> */}
         </div>
       </div>
     </div>
