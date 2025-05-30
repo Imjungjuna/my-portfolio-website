@@ -25,12 +25,15 @@ export function Modal({ children }: { children: React.ReactNode }) {
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute top-0 right-0 m-8 bg-transparent hover:cursor-pointer"
+          className="absolute top-0 right-0 my-[26px] mx-5 md:m-8 bg-transparent hover:cursor-pointer"
           onClick={() => {
             router.back();
           }}
         >
-          <X className="size-8 text-black opacity-45 hover:opacity-80" />
+          <X
+            strokeWidth={1.5}
+            className="size-6 md:size-8 text-black opacity-45 hover:opacity-80"
+          />
         </button>
         {children}
       </div>

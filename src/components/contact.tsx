@@ -1,144 +1,32 @@
 "use client";
+import Link from "next/link";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { motion } from "framer-motion";
-
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
-  }),
-});
-
-export default function Contact() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-  }
-
+export default function ContactCard() {
   return (
-    <section className="relative overflow-hidden bg-zinc-900 py-20">
-      <div className="container relative z-10 mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mx-auto max-w-2xl text-center"
+    <div className="flex flex-col items-center justify-center py-20 md:py-24">
+      <p className="w-full text-center text-2xl md:text-3xl md:leading-[1.5] font-semibold leading-normal mb-4 md:mb-6">
+        감사합니다
+        <br />
+        누구나, 언제든지, 무엇이든
+        <br />
+        편하게 연락주세요
+      </p>
+
+      <div className="bg-gray-600 mx-auto grid grid-cols-3 text-sm md:text-base gap-2 md:gap-3 p-6 md:p-8 rounded-2xl shadow-lg shadow-slate-700/[.8] w-fit">
+        <p className="font-semibold">전화번호</p>
+        <p className="col-span-2">010.4740.3604</p>
+        <p className="font-semibold">이메일</p>
+        <p className="col-span-2">dalbichi9801@gmail.com</p>
+        <Link
+          href="https://github.com/Imjungjuna"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold"
         >
-          <h2 className="mb-4 text-3xl font-bold tracking-tighter sm:text-4xl">
-            Get in Touch
-          </h2>
-          <p className="mb-8 text-gray-400">
-            Interested in collaborating or commissioning a piece? Let&apos;s
-            create something amazing together.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mx-auto max-w-md"
-        >
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>이름</FormLabel>
-                    <FormControl>
-                      <Input placeholder="홍길동" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>메일 주소</FormLabel>
-                    <FormControl>
-                      <Input placeholder="your@email.com" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>프로젝트 제안</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="프로젝트에 대해 이야기해주세요..."
-                        className="min-h-[120px]"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="w-full">
-                Send Message
-              </Button>
-            </form>
-          </Form>
-        </motion.div>
+          Github
+        </Link>
+        <p className="col-span-2 underline">@imjungjuna</p>
       </div>
-      <div className="absolute inset-0 z-0 opacity-30">
-        <svg
-          className="h-full w-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          {Array.from({ length: 50 }).map((_, i) => (
-            <line
-              key={i}
-              x1={i * 2}
-              y1="0"
-              x2={i * 2}
-              y2="100"
-              stroke="white"
-              strokeWidth="0.1"
-            />
-          ))}
-        </svg>
-      </div>
-    </section>
+    </div>
   );
 }

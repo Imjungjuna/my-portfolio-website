@@ -8,10 +8,9 @@ import { competencies } from "@/lib/competency";
 import { projects } from "@/lib/projects";
 import { stackIcons } from "@/lib/stackIcons";
 
-// w-full min-w-96 max-w-screen-lg min-h-screen mx-auto px-5 md:px-8 lg:px-10 flex flex-col items-center relative
 export default function Portfolio() {
   return (
-    <div className="min-h-screen w-full bg-black/80 text-white px-5 md:px-8 lg:px-10 relative">
+    <div className="min-h-screen w-full bg-transparent text-white px-5 md:px-8 lg:px-10 relative">
       <div className="flex-col max-w-[1340px] mx-auto">
         {/* Profile Section */}
         <div className="space-y-8 hidden">
@@ -48,7 +47,7 @@ export default function Portfolio() {
           <h2 className="text-yellow-500 text-sm md:text-base w-max mx-auto tracking-tight mb-[6px] leading-[1.5] font-semibold">
             기술 스택 및 도구
           </h2>
-          <p className="w-full text-2xl text-center text-gray-700 break-keep mb-6 sm:mb-10 leading-[32px] font-semibold max-w-max">
+          <p className="text-2xl text-center text-gray-700 break-keep mb-6 sm:mb-10 leading-[32px] font-semibold">
             아래의 기술을 사용할 수 있습니다.
           </p>
           <div className="mx-auto flex flex-wrap gap-3 md:gap-4 max-w-96 md:max-w-screen justify-center">
@@ -135,7 +134,7 @@ export default function Portfolio() {
                   key={project.id}
                   className="hover:cursor-pointer w-full h-fit bg-background border-none rounded-md md:rounded-lg flex flex-col justify-between gap-6 md:gap-0 overflow-hidden hover:scale-[1.05] duration-200"
                 >
-                  <div className="w-full aspect-4/3 bg-amber-300 relative">
+                  <div className="hidden sm:block w-full aspect-4/3 bg-amber-300 relative">
                     <Image
                       src={project.image}
                       alt={project.title}
