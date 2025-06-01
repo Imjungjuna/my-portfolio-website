@@ -17,15 +17,15 @@ export default function ContactCard() {
         <p className="col-span-2">010.4740.3604</p>
         <p className="font-semibold">이메일</p>
         <p className="col-span-2">dalbichi9801@gmail.com</p>
+        <p className="font-semibold">Github</p>
         <Link
           href="https://github.com/Imjungjuna"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold"
+          className="col-span-2 underline"
         >
-          Github
+          @imjungjuna
         </Link>
-        <p className="col-span-2 underline">@imjungjuna</p>
       </div>
     </div>
   );

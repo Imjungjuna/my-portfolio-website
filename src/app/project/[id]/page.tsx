@@ -14,13 +14,12 @@ export default async function ProjectPage({
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
-    // 적절한 'Not Found' UI를 보여주는 것이 좋습니다.
     return <div>프로젝트를 찾을 수 없습니다.</div>;
   }
 
   return (
-    <div className="bg-white rounded-md size-full p-6 md:p-8 overflow-y-auto">
-      <div className="w-full flex flex-col gap-3 md:gap-6">
+    <div className="bg-white rounded-md max-w-[800px] my-6 md:mt-8 md:mb-10 mx-auto overflow-y-auto">
+      <div className="w-full flex flex-col gap-3 md:gap-6 p-6 md:p-8">
         <p className="mt-[2px] text-xl md:text-2xl font-semibold leading-normal break-keep mb-4">
           {splitText(project.longTitle || project.title)}
         </p>
@@ -84,7 +83,7 @@ export default async function ProjectPage({
         </div>
       </div>
       <div className="w-full h-[1px] min-h-[1px] bg-foreground/10 my-10 md:my-12"></div>
-      <div className="text-sm md:text-base flex flex-col gap-3">
+      <div className="text-sm md:text-base flex flex-col gap-3 p-6 md:p-8">
         <p className="font-semibold text-lg">세부 정보</p>
         <div className="flex flex-col gap-y-6 md:gap-y-8">
           {Object.entries(project.details).map(
