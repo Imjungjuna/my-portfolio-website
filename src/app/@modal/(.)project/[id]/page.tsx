@@ -8,13 +8,12 @@ import { splitText } from "@/lib/utils";
 export default async function ProjectModal({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const paramInString = await params;
 
   const projectId = parseInt(paramInString.id, 10);
   const project = projects.find((p) => p.id === projectId);
-  console.log("십라");
   if (!project) {
     console.log("프로젝트를 찾을 수 없습니다.");
     return (
