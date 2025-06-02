@@ -10,9 +10,7 @@ export default async function ProjectModal({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const paramInString = await params;
-
-  const projectId = parseInt(paramInString.id, 10);
+  const projectId = await parseInt((await params).id, 10);
   const project = projects.find((p) => p.id === projectId);
   if (!project) {
     console.log("프로젝트를 찾을 수 없습니다.");

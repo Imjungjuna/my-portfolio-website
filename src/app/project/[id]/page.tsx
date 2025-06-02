@@ -7,10 +7,9 @@ import { splitText } from "@/lib/utils";
 export default async function ProjectPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const paramInString = await params;
-  const projectId = parseInt(paramInString.id, 10);
+  const projectId = parseInt((await params).id, 10);
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
