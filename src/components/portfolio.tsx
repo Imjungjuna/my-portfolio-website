@@ -10,10 +10,10 @@ import { stackIcons } from "@/lib/stackIcons";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen w-full bg-transparent text-white px-5 md:px-8 lg:px-10 relative">
+    <div className="min-h-screen bg-heroBg overflow-x-hidden w-full text-main px-5 md:px-8 lg:px-10 relative">
       <div className="flex-col max-w-[1340px] mx-auto">
         {/* Profile Section */}
-        <div className="space-y-8 hidden">
+        <div className="space-y-8 hidden ">
           {/* Profile Header */}
           <div className="flex items-center gap-4">
             <Image
@@ -43,11 +43,11 @@ export default function Portfolio() {
         </div>
 
         {/* Stack Section */}
-        <div className="bg-white rounded-xl justify-center w-full py-8 mt-8 mb-16 md:mt-12 md:mb-24 lg:mb-32">
-          <h2 className="text-yellow-500 text-sm md:text-base w-max mx-auto tracking-tight mb-[6px] leading-[1.5] font-semibold">
+        <div className="bg-sectionBg/50 transition transform border-heroBg hover:border-highlight border-2 rounded-xl justify-center w-full py-8 mt-8 mb-16 md:mt-12 md:mb-24 lg:mb-32">
+          <h2 className="text-tertiary text-sm md:text-base w-max mx-auto tracking-tight mb-[6px] leading-[1.5] font-semibold">
             기술 스택 및 도구
           </h2>
-          <p className="text-2xl text-center text-gray-700 break-keep mb-6 sm:mb-10 leading-[32px] font-semibold">
+          <p className="text-2xl text-center text-main break-keep mb-6 sm:mb-10 leading-[32px] font-semibold">
             아래의 기술을 사용할 수 있습니다.
           </p>
           <div className="mx-auto flex flex-wrap gap-3 md:gap-4 max-w-96 md:max-w-screen justify-center">
@@ -79,10 +79,10 @@ export default function Portfolio() {
 
         {/* Competency Section */}
         <div className="max-w-full mx-auto pt-16 pb-24 md:pt-20 md:pb-32 lg:pb-40">
-          <h2 className="text-yellow-500 text-sm md:text-base w-max mx-auto tracking-tight mb-[6px] leading-[1.5] font-semibold">
+          <h2 className="text-tertiary text-sm md:text-base w-max mx-auto tracking-tight mb-[6px] leading-[1.5] font-semibold">
             핵심 역량
           </h2>
-          <p className="text-2xl text-center text-gray-700 break-keep mb-6 sm:mb-10 leading-[1.4] tracking-tight font-semibold max-w-max mx-auto">
+          <p className="text-2xl text-center text-main break-keep mb-6 sm:mb-10 leading-[1.4] tracking-tight font-semibold max-w-max mx-auto">
             <span className="hidden md:inline">
               사용자 중심의 철학을 바탕으로,
             </span>
@@ -92,15 +92,15 @@ export default function Portfolio() {
             {competencies.map((competencies) => (
               <div
                 key={competencies.id}
-                className="bg-white border-4 border-amber-300 text-black pt-2 pb-8 rounded-md flex-grow-1"
+                className="transition transform hover:scale-[1.03] hover:shadow-2xl hover:skew-1 bg-sectionBg border-heroBg border-2 hover:border-highlight pt-2 pb-8 rounded-md flex-grow-1"
               >
-                <h3 className="text-xl font-bold text-red-300 mb-4 p-4 my-2 text-center">
+                <h3 className="text-xl font-bold text-main mb-4 p-4 my-2 text-center">
                   {competencies.title}
                 </h3>
                 <ul className="space-y-3 text-sm text-gray-700">
                   {competencies.details.map((detail, index) => (
                     <li
-                      className="mb-2 list-disc pl-1 ml-8 pr-4 lg:text-base md:text-sm text-base text-stone-700"
+                      className="mb-2 list-disc pl-1 ml-8 pr-4 font-medium lg:text-base md:text-sm text-base text-secondary"
                       key={index}
                     >
                       {detail}
@@ -114,10 +114,10 @@ export default function Portfolio() {
 
         {/* Projects Section */}
         <section className="max-w-full mx-auto pt-16 pb-24 md:pt-20 md:pb-32 lg:pb-40">
-          <h2 className="text-yellow-500 text-sm md:text-base w-max mx-auto tracking-tight mb-[6px] leading-[1.5] font-semibold">
+          <h2 className="text-tertiary text-sm md:text-base w-max mx-auto tracking-tight mb-[6px] leading-[1.5] font-semibold">
             주요 프로젝트
           </h2>
-          <p className="text-2xl text-center text-gray-200 break-keep mb-8 sm:mb-12 leading-[1.4] tracking-tight font-semibold max-w-max mx-auto">
+          <p className="text-2xl text-center text-main break-keep mb-8 sm:mb-12 leading-[1.4] tracking-tight font-semibold max-w-max mx-auto">
             <span className="hidden md:inline">
               기술적 고민과 해결 과정을 담은,
             </span>
@@ -132,9 +132,9 @@ export default function Portfolio() {
               >
                 <div
                   key={project.id}
-                  className="hover:cursor-pointer w-full h-fit bg-background border-none rounded-md md:rounded-lg flex flex-col justify-between gap-6 md:gap-0 overflow-hidden hover:scale-[1.05] duration-200"
+                  className="border-heroBg hover:border-highlight border-2 hover:skew-1 hover:cursor-pointer transform transition w-full h-fit bg-sectionBg rounded-md md:rounded-lg flex flex-col justify-between gap-6 md:gap-0 overflow-hidden hover:scale-[1.03] duration-300"
                 >
-                  <div className="hidden sm:block w-full aspect-4/3 bg-amber-300 relative">
+                  <div className="hidden sm:block w-full aspect-4/3 relative">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -142,10 +142,10 @@ export default function Portfolio() {
                     />
                   </div>
                   <div className="p-5 md:p-6 ">
-                    <h3 className="text-lg md:text-xl text-black font-semibold md:mb-4 no-underline!important">
+                    <h3 className="text-lg md:text-xl text-main font-semibold md:mb-4 no-underline!important">
                       {project.title}
                     </h3>
-                    <div className="text-black/60 mb text-sm font-normal mb-4">
+                    <div className="text-secondary font-medium mb text-sm mb-4">
                       {project.description.split(",").map((line, index) => (
                         <p
                           className="truncate whitespace-nowrap overflow-hidden"
@@ -156,7 +156,7 @@ export default function Portfolio() {
                       ))}
                     </div>
 
-                    <div className="text-black flex gap-2 items-center">
+                    <div className="text-main flex gap-2 items-center">
                       {project.stacks.map((stackName) => {
                         const iconSrc = stackIcons[stackName];
                         return (

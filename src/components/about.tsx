@@ -3,8 +3,8 @@ import profilePic from "../assets/about/profile.jpg";
 
 export default function About() {
   return (
-    <div className="w-full items-center px-5 md:px-8 lg:px-10 relative max-w-[1300px] mx-auto pt-16 pb-24 md:pb-32">
-      <div className="relative flex items-stretch gap-6 md:gap-10 lg:gap-28 flex-col md:flex-row pt-16">
+    <div className="bg-sectionBg overflow-x-hidden w-full items-center px-5 md:px-8 lg:px-10 relative  pt-16 pb-24 md:pb-32">
+      <div className="relative flex max-w-[1300px] mx-auto items-stretch gap-6 md:gap-10 lg:gap-28 flex-col md:flex-row pt-16">
         {/* Profile Image */}
         <div className="flex">
           <div className="w-[min(80vw,26rem)] mx-auto md:w-[22rem] aspect-2/3 relative">
@@ -20,8 +20,8 @@ export default function About() {
 
         {/* Content */}
         <div className="space-y-6 px-6 md:px-0 py-30 flex flex-col items-start justify-start">
-          <h2 className="text-2xl font-bold">About Me</h2>
-          <p className="text-gray-300 text-lg leading-[2] break-keep">
+          <h2 className="text-[3rem] text-main font-bold">About Me</h2>
+          <p className="text-secondary font-medium tracking-tight text-lg leading-[2] break-keep">
             프론트엔드의 핵심은 “인터페이스, 인터렉션, 최적화”로 요약된다고
             믿습니다. <br />
             서비스 정체성을 고려하지 않은 인터페이스는 ’껍데기’일 뿐이고, 깊이가

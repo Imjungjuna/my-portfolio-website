@@ -3,6 +3,23 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-heroBg: #16161a;
+  --color-sectionBg: #242629;
+  --color-headline: #fffffe;
+  --color-paragraph: #94a1b2;
+  --color-cardBg: #16161a;
+  --color-link: #7f5af0;
+  --color-button: #7f5af0;
+  --color-buttonText: #fffffe;
+
+  --color-stroke: #010101;
+  --color-main: #fffffe;
+  --color-highlight: #7f5af0;
+  --color-secondary: #72757e;
+  --color-tertiary: #2cb67d;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -17,8 +34,8 @@
     --primary: 0 0% 9%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    /* --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%; */
 
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
@@ -49,8 +66,8 @@
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
 
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
+    /* --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%; */
 
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
@@ -89,8 +106,6 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
@@ -124,8 +139,8 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  /* --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0); */
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -158,8 +173,8 @@
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+  /* --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0); */
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);

@@ -5,7 +5,7 @@ import About from "@/components/about";
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-black/90 text-white">
+    <main className="min-h-screen">
       <Hero />
       <About />
       <Portfolio />
